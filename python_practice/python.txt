@@ -1,0 +1,173 @@
+首字母大写：字符串.title()
+   全部大写：字符串.upper()
+   全部小写：字符串.lower()
+----------------
+删除字符串开头的空白：字符串.lstrip()
+删除字符串末尾的空白：字符串.rstrip()
+删除字符串两端的空白：字符串.strip()
+-------------------
+乘方：**
+平方：x**2
+立方：x**3
+--------------------
+将非字符串值表示为字符串：str()		eg:str(22333333)
+--------------------
+在列表末尾添加元素：	names.append('bick')
+在列表任意位置添加元素：	names.insert(0,'bick')
+删除列表中某一元素：	del names[1]
+删除列表中最后一个元素并使用它：   popped_name = names.pop()
+删除列表中任意位置元素并使用它：   popped_name = names.pop(2)
+根据值删除元素： 		names.remove('bick')
+---------------------
+	方法sort()对列表进行永久性排序
+list_name.sort() ：按照字母从小到大顺序排列，且无法回复到原来的排列顺序。
+list_name.sort(reverse=True)	:按照字母顺序相反的顺序排列。
+	函数sorted()对列表进行临时排序
+sorted(list_name)		:对列表临时按照字母顺序排序。
+sorted(list_name,reverse=True)	:对列表临时按照字母相反顺序排列。
+方法reverse()可以将列表永久性反转排序
+	list_name.reverse()
+函数len()可快速获悉列表的长度
+	len(list_name)
+
+=======================
+元组：是一系列不可修改的元素。
+eg： dimensions = （200，30）
+=======================
+for循环		eg：for car in cars:   #cars是某一个列表
+range函数 ：生成一系列的数字。（差一行为）/ 还可以指定步长
+	for value in range(1,5):
+   		 print(value)      	#输出一到四
+list函数	：要创建数字列表，使用函数list()将range()的结果直接转为列表。
+	eg：numbers =list(range(1,6))    #结果：[1,2,3,4,5]
+	  even_numbers = list(range(2,11,2))   #结果：[2,4,6,8,10]
+列表解析
+squares= [value**2 for value in range(1,11)]   #创建前10整数的平方进列表
+
+------------------------
+min(degits)	找出列表最小值	
+max(degits)	找出列表最大值
+sum(degits)	找出列表总和
+==================
+		使用列表的一部分【切片】
+      for循环中也可以使用切片 eg：for player in players[1:3]
+              复制一个列表用切片：friend_foods = my_foods[:]
+	   若为friend_foods = my_foods  #表示变量指向同一个列表
+------------------------------
+在运行for循环前，判断列表是否空非常重要。
+在if语句中将列表名用在条件表达式中是，python在列表至少包含一个元素时返回True，在列表为空时返回False。
+---------------------
+打印不换行只需在print（"dfsaklj",end=" "）
+==========================
+		字典（键-值对）
+		eg:alien_0 = {'color':'green' , 'points':'5'}
+	     #可以将任何python对象作为字典中的值。
+	键和值之间用冒号分隔，而键-值对之间用逗号分隔。
+【添加键-值对】：alien_0['x_position'] = 0
+【删除键-值对】：eg：del alien_0['points']
+--------------
+遍历所有的键-值对 	    
+	eg:         for key, value in user_0.items():
+          也可以写成：for k, v in user_0.items():
+遍历所有的键
+	eg：      for name in favorite_languages.keys():
+          可以替换成：for name in favorite_languages:
+	（（因为遍历字典时，会默认遍历所有的键。
+按顺序遍历字典中的所有键
+	eg：      for name in sorted(favorite_languages.keys()):
+遍历字典中的所有值
+	eg：      for language in favorite_languages.valuse():
+            当值的数量多时，可能出现重复。为了剔除重复项使用集合。
+	eg：      for language in set(favorite_languages.valuse()):
+===============
+为了剔除重复项，可使用 集合（set）。集合类似列表，但每个元素独一无二。
+===============
+函数input()，Python将用户输入解读为字符串。
+	eg：name = input("Please enter your name: ")
+在python2.7中是用raw_input()来获取输入。
+函数int(),可以将数字的字符床表示转换为数值表示。
+	eg：age = int(age)
+------------------
+求模运算符（%）：可以用于判断一个数是奇数还是偶数。
+=====================
+	for循环用于针对集合中的每个元素的一个代码块，而while循环不断地运行，知道指定条件不满足为止。
+           for循环中不应修改列表，否则将导致Python难以跟踪其中的元素。
+           要在遍历列表的同时对其进行修改，可使用while循环。eg：while(True)
+====================
+关键字def用于定义一个函数
+实参是调用函数时传递给函数的信息。
+函数并非总是直接显示输出。使用return语句将值放回到调用函数的代码行。
+	调用返回值函数时，需要提供一个变量，用于存储返回的值。
+---------------
+将列表传递给函数后，函数可以对其进行修改。
+	在函数中对这个列表所作的任何修改都是永久性的。
+有时候需要禁止函数修改列表。
+	可向函数传递列表的副本而不是原件。
+		eg：function_name(list_name[:])
+			print_models(completed_models[:])
+传递任意数量的实参：def make_pizza(*toppings)
+	形参名*toppings中的星号让Python创建一个名为toppings的空元组	
+		并将收到的所有值都封装到这个元组。
+	形参**user_info中的两个星号是创建一个名为user_info的空字典
+可以在定义函数时对形参进行初始化。
+------------------------
+导入整个模块	
+	eg：import pizza	pizza.makepizza()
+导入特定的函数	
+	eg：from module_name import function_name
+	使用这种语法时无需使用句点。eg：make_pizza(13,"peeper")
+使用as给函数指定别名	
+	eg：from pizza import make_pizza as mp
+	       mp(13,"peeper")
+使用as给模块指定别名
+	eg：import pizza as p
+	       p.make_pizza(13,"peeper")
+导入模块中的所有函数
+	eg：from pizza import *
+	       make_pizza(13,"peeper")
+	由于导入了每个函数，可通过名称来调用每个函数，而无需句点标识符。然而，使用北非自己编写的大型模块时，最好不要采用这种导入方法。
+          ！！！最佳做法：要么只导入你需要的函数。要么导入整个模块并使用句点表示法。
+--------------------------
+在Python中，首字母大写的名称指的是类。
+类中的函数称为方法。
+类中的方法__init__() 是一个特殊方法！！！
+	每当实例化对象时，Python就会自动运行它。
+	其中:     def __init__(self,name,age):
+	形参self必不可少，还必须位于其他形参前面。
+	—）每个与类相关联的方法调用都会自动传递实参self，它是一个只想实例本身的引用，让实例能够访问类中的属性和方法。
+==================================
+文件
+eg：with open('pi_digits.txt') as file_object:
+	contents  = file_object.read()
+		print(contents)
+	函数open()接受一个参数：要打开的文件的路径。
+	函数open()放回一个表示文件的对象。这里对象储存到了file_object
+	Python中可以不使用close()函数来关闭文件，python会在合适的时候自己关闭。
+	关键字with，让Python负责妥善地打开和关闭文件。open的文件对象旨在with代码块内可用。
+	read()函数读取文件的全部内容，在文件末尾时返回一个空字符串。
+可以通过使用：print(contents.rstrip())来删除字符床末尾的空白。rstrip()函数用于删除末尾的空行。
+	readlines()从文件中读取每一行，并将其存储在一个列表中。
+       ！！！读取文本文件时，Python将其中的所有文本都解读为字符串。
+-----------------------------------
+模块json用来存储数据。
+json.dump()用来存储数字列表：	
+	函数json.dump()接收两个实参：要储存的数据以及可用于储存数据			的文件对象.
+json.load()将这个列表读取到内存中：
+-------------------------
+相对路径
+	Windows系统在文件路径中使用反斜杠（\）
+---------------------------
+python将默认的只读模式打开文件。
+若你要写入的文件不存在，函数open()将自动创建它。
+	在输入路径时，在open()函数，可以在开头的引号前加上r
+		eg：with open(r'file_path') as file_object:
+r+	打开一个文件用于读写。文件指针将会放在文件的开头。
+w+	打开一个文件用于读写。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。
+Python只能将字符串写入文本文件。
+函数write()不会在你写入的文件末尾添加换行符。
+-------------------------------------
+try-except-else代码块
+	只有可能引发异常的代码才需要放在try语句中。有一些仅在try代码块成功执行时才需要运行的代码应放在else代码块中。
+=================
+分析文本
+	方法split()以空格为分隔符将字符串分拆成多个部分，并将这些部分都储存到一个列表。
